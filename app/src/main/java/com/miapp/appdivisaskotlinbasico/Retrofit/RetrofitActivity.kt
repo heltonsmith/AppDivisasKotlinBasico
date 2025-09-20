@@ -17,7 +17,7 @@ import androidx.lifecycle.lifecycleScope
 import com.miapp.appdivisaskotlinbasico.ActivitysNormales.AsyncActivity
 import com.miapp.appdivisaskotlinbasico.ActivitysNormales.MainActivity
 import com.miapp.appdivisaskotlinbasico.R
-import com.miapp.appdivisaskotlinbasico.Retrofit.modelos.interfaceRetrofit.MindicadorApiService
+import com.miapp.appdivisaskotlinbasico.Retrofit.modelos.MindicadorApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -142,6 +142,8 @@ class RetrofitActivity : AppCompatActivity() {
      * Función suspend que utiliza la instancia de apiService de esta Activity.
      */
     private suspend fun obtenerValorDolarDesdeApi(): Double? {
+        var valorDolar: Double? = null // Variable para almacenar el valor del dólar
+
         // Asegurarse de que apiService no sea nulo, aunque ya se verifica antes de llamar
         val service = apiService ?: return null
 
@@ -150,9 +152,11 @@ class RetrofitActivity : AppCompatActivity() {
             try {
                 val response = service.getIndicadores() // Usa la instancia de servicio de la Activity
                 if (response.isSuccessful) { // Verificar si la respuesta es exitosa
-                    val valor = response.body()?.dolar?.valor // Extraer el valor del dólar de la respuesta
-                    Log.d("RetrofitActivityLog", "Valor del dólar parseado: $valor") // Log para depuración
-                    valor // Devolver el valor del dólar
+                    Log.d("RetrofitActivityLog", "Respuesta exitosa: ${response.body()}") // Log para depuración
+                    valorDolar =
+                        response.body()?.dolar?.valor // Extraer el valor del dólar de la respuesta
+                    Log.d("RetrofitActivityLog", "Valor del dólar parseado: $valorDolar") // Log para depuración
+                    valorDolar
                 } else {
                     Log.e("RetrofitActivityLog", "Error API: ${response.code()} - ${response.message()}") // Log para depuración
                     null // Devolver null en caso de error
@@ -160,6 +164,8 @@ class RetrofitActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 Log.e("RetrofitActivityLog", "Excepción al obtener valor dólar desde API", e) // Log para depuración
                 null // Devolver null en caso de excepción
+            } finally {
+                valorDolar
             }
         } // Fin de withContext
     } // Fin de obtenerValorDolarDesdeApi

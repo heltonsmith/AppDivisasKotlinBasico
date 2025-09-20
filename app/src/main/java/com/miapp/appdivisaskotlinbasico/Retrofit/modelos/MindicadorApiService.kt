@@ -1,6 +1,5 @@
-package com.miapp.appdivisaskotlinbasico.Retrofit.modelos.interfaceRetrofit
+package com.miapp.appdivisaskotlinbasico.Retrofit.modelos
 
-import com.miapp.appdivisaskotlinbasico.Retrofit.modelos.ApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
