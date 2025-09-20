@@ -151,7 +151,7 @@ class AsyncActivity : AppCompatActivity() {
                         val dolarObject = jsonObject.getJSONObject("dolar") // Obtener el objeto "dolar"
                         val valor = dolarObject.getDouble("valor") // Obtener el valor del dólar
                         Log.d("AsyncTest", "Valor del dólar parseado en async: $valor") // Log para rastrear
-                        valor // Esto es lo que devolverá el Deferred si todo va bien
+                        valor // Esto es lo que devolverá el Deferred si todoo va bien
                     } else {
                         Log.e("AsyncTest", "Error en async: No se encontró el indicador 'dolar' en el JSON.") // Log para rastrear
                         null // Devuelve null si no se encuentra 'dolar'
@@ -181,7 +181,7 @@ class AsyncActivity : AppCompatActivity() {
         val url = URL("https://mindicador.cl/api") // URL del API
         val connection = url.openConnection() as HttpURLConnection // Abrir la conexión
         // ... (resto del código de fetchIndicadoresJson se mantiene igual)
-        connection.requestMethod = "GET" // Método de solicitud
+        connection.requestMethod = "GET" // Métodoo de solicitud
         connection.connectTimeout = 10000 // 10 segundos de timeout
         connection.readTimeout = 10000    // 10 segundos de timeout
 

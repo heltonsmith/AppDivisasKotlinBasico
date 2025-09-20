@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
     private fun fetchIndicadoresJson(): String? {
         val url = URL("https://mindicador.cl/api") // URL del API
         val connection = url.openConnection() as HttpURLConnection // Abrir la conexión
-        connection.requestMethod = "GET" // Método de solicitud
+        connection.requestMethod = "GET" // Métodoo de solicitud
         connection.connectTimeout = 10000 // 10 segundos de timeout
         connection.readTimeout = 10000    // 10 segundos de timeout
 
