@@ -1,4 +1,4 @@
-package com.miapp.appdivisaskotlinbasico.Retrofit.modelos
+package com.miapp.appdivisaskotlinbasico.Retrofit.api_retrofit
 
 data class DolarInfo(
     val codigo: String,

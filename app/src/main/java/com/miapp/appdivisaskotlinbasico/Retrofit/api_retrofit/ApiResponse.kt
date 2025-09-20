@@ -1,4 +1,4 @@
-package com.miapp.appdivisaskotlinbasico.Retrofit.modelos
+package com.miapp.appdivisaskotlinbasico.Retrofit.api_retrofit
 
 data class ApiResponse(
     // Los campos de nivel superior que SÍ quieres capturar, como la fecha general o versión de la API (opcional)

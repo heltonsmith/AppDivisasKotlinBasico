@@ -17,7 +17,7 @@ import androidx.lifecycle.lifecycleScope
 import com.miapp.appdivisaskotlinbasico.ActivitysNormales.AsyncActivity
 import com.miapp.appdivisaskotlinbasico.ActivitysNormales.MainActivity
 import com.miapp.appdivisaskotlinbasico.R
-import com.miapp.appdivisaskotlinbasico.Retrofit.modelos.MindicadorApiService
+import com.miapp.appdivisaskotlinbasico.Retrofit.api_retrofit.MindicadorApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
